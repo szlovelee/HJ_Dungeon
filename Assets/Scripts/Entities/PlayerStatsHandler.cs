@@ -1,6 +1,7 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerStatsHandler : MonoBehaviour
@@ -13,6 +14,10 @@ public class PlayerStatsHandler : MonoBehaviour
     private void Awake()
     {
         gameManager = GameManager.instance;
+    }
+
+    private void Start()
+    {
         UpdateCharacterStats();
     }
 
@@ -26,14 +31,15 @@ public class PlayerStatsHandler : MonoBehaviour
 
         CurrentStats = new PlayerStats { attackSO = attackSO };
 
-        UpdateStats((a, b) => b, baseStats);    //(a, b) ==> b´Â µÎ µ¥ÀÌÅÍ¸¦ ¹Þ¾Æ¿Í¼­ ÈÄÀÚ¸¦ ¾²°Ú´Ù´Â ¶æ
+        UpdateStats((a, b) => b, baseStats);    //(a, b) ==> bëŠ” ë‘ ë°ì´í„°ë¥¼ ë°›ì•„ì™€ì„œ í›„ìžë¥¼ ì“°ê² ë‹¤ëŠ” ëœ»
 
-
-        foreach (Items item in gameManager.inventory.EquippedItems)
+        if (!gameManager.inventory.EquippedItems.All(item => item == null))     // EquippedItemsì˜ ìš”ì†Œê°€ ëª¨ë‘ nullì¸ ê²½ìš° ì˜ˆì™¸ì²˜ë¦¬
         {
-            UpdateAttackStats((o, o1) => o + o1, CurrentStats.attackSO, item.attackSO);
+            foreach (Items item in gameManager.inventory.EquippedItems)
+            {
+                UpdateAttackStats((o, o1) => o + o1, CurrentStats.attackSO, item.attackSO);
+            }
         }
-
     }
 
     private void UpdateStats(Func<float, float, float> operation, PlayerStats modifier)
