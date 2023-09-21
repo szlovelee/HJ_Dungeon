@@ -29,7 +29,8 @@ public class PlayerStatsHandler : MonoBehaviour
             attackSO = Instantiate(baseStats.attackSO);
         }
 
-        CurrentStats = new PlayerStats { attackSO = attackSO };
+        CurrentStats = ScriptableObject.CreateInstance<PlayerStats>();
+        CurrentStats.attackSO = attackSO;
 
         UpdateStats((a, b) => b, baseStats);    //(a, b) ==> b는 두 데이터를 받아와서 후자를 쓰겠다는 뜻
 
