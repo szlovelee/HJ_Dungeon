@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff4c659a46f45448b9f6e3c94356e7, type: 3}
   m_Name: GSCAxe_ItemData
   m_EditorClassIdentifier: 
+  itemName: "\uAE08\uC740\uB3D9 \uB3C4\uB07C"
   Type: 0
   attack: 8
   defense: 0

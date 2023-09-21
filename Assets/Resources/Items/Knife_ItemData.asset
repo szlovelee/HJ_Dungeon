@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff4c659a46f45448b9f6e3c94356e7, type: 3}
   m_Name: Knife_ItemData
   m_EditorClassIdentifier: 
+  itemName: "\uAC00\uC9DC \uCE7C"
   Type: 0
   attack: 5
   defense: 0

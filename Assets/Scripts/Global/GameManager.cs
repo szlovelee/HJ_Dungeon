@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        inventory = new Inventory();
 
+        inventory = new Inventory();
         ItemList = Resources.LoadAll<Items>("Items");
     }
 

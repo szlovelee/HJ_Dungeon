@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff4c659a46f45448b9f6e3c94356e7, type: 3}
   m_Name: Sabaton_ItemData
   m_EditorClassIdentifier: 
+  itemName: "\uC1E0\uC2E0\uBC1C"
   Type: 2
   attack: 0
   defense: 0

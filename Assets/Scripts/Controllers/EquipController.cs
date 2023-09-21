@@ -7,27 +7,27 @@ using UnityEngine.UI;
 
 public class EquipController : MonoBehaviour
 {
-    private GameObject[] Pos;
+    private static GameObject[] Pos;
     private GameObject WeaponPos;
     private GameObject ShieldPos;
     private GameObject ArmorPos;
     private GameObject RingPos;
 
-    private Sprite emptyImg;
+    private static Sprite emptyImg;
 
     public Items itemInfo;
-    public Items[] Equipped;
+    public static Items[] Equipped;
     public Button inventoryButton;
 
     private static List<GameObject> inventoryObjects;
-    private static GameObject[] EquippedObjects;
+    private static GameObject[] EquippedObjects = new GameObject[4];
     private static GameObject selectedItem;
+    private static Items selectedItemInfo;
 
     private void Start()
     {
         inventoryObjects = ItemUICreator.instance.inventoryObjects;
         Equipped = GameManager.instance.inventory.EquippedItems;
-        EquippedObjects = new GameObject[Equipped.Length];
 
         WeaponPos = UIController.instance.WeaponPos;
         ShieldPos = UIController.instance.ShieldPos;
@@ -46,7 +46,7 @@ public class EquipController : MonoBehaviour
         UpdateEquippedUI();
     }
 
-    private void UpdateEquippedUI()
+    private static void UpdateEquippedUI()
     {
         for (int i = 0; i <  Equipped.Length; i++)
         {
@@ -75,21 +75,17 @@ public class EquipController : MonoBehaviour
 
     private void ItemSelection()
     {
-        if (Equipped[(int)itemInfo.Type] == null)
-        {
-            AddEquipped();
-        }
-        else if (Equipped[(int)itemInfo.Type] != itemInfo)
+        if (Equipped[(int)itemInfo.Type] != itemInfo)
         {
             selectedItem = this.gameObject;
-            UIController.instance.OpenChangeConfirm();
+            selectedItemInfo = itemInfo;
+            UIController.instance.OpenChangeConfirm(selectedItemInfo);
         }
         else
         {
             RemoveEquipped();
+            UpdateEquippedUI();
         }
-
-        UpdateEquippedUI();
     }
 
     private void AddEquipped()
@@ -111,14 +107,14 @@ public class EquipController : MonoBehaviour
         UpdateEquippedUI();
     }
 
-    private void SetImageFormat(GameObject pos)
+    private static void SetImageFormat(GameObject pos)
     {
         pos.GetComponent<Image>().color = new Color32(255, 255, 255, 180);
 
         RectTransform rectTransform = pos.GetComponent<RectTransform>();
         rectTransform.localScale = new Vector3(1f, 1f, 1f);
     }
-    private void ResetImageFormat(GameObject pos)
+    private static void ResetImageFormat(GameObject pos)
     {
         pos.GetComponent<Image>().color = new Color32(255, 255, 255, 24);
         pos.GetComponent<Image>().sprite = emptyImg;
