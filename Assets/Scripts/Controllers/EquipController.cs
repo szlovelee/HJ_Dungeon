@@ -70,6 +70,7 @@ public class EquipController : MonoBehaviour
             if (EquippedObjects[k] != null)
                 EquippedObjects[k].transform.GetChild(0).gameObject.SetActive(true);
         }
+        GameManager.instance.UpdatePlayerStats();
     }
 
     private void ItemSelection()
@@ -106,7 +107,7 @@ public class EquipController : MonoBehaviour
     private void ChangeEquipped()
     {
         Equipped[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = selectedItem.GetComponent<EquipController>().itemInfo;
-        EquippedObjects[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = this.gameObject;
+        EquippedObjects[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = selectedItem.gameObject;
         UpdateEquippedUI();
     }
 

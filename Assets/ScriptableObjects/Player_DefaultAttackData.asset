@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7712edeecec6222489600e8560698452, type: 3}
   m_Name: Player_DefaultAttackData
   m_EditorClassIdentifier: 
-  attack: 35
-  defense: 40
-  HP: 100
-  critical: 25
+  baseAttack: 35
+  baseDefense: 40
+  baseMaxHealth: 100
+  baseCritical: 25

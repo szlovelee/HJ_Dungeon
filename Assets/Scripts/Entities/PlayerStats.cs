@@ -26,6 +26,10 @@ public class PlayerStats : ScriptableObject
             _maxExp = value;
         }
     }
+    public int attack;
+    public int defense;
+    public int maxHealth;
+    public int critical;
 
     public int exp;
     public int coin;

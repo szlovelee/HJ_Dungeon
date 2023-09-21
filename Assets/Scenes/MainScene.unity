@@ -8040,6 +8040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83295d991238154f8504b12c33fa509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryObjects: []
   InventoryPos: {fileID: 71052518}
 --- !u!1 &679747441
 GameObject:
@@ -10217,6 +10218,7 @@ GameObject:
   - component: {fileID: 1120388610}
   - component: {fileID: 1120388612}
   - component: {fileID: 1120388613}
+  - component: {fileID: 1120388614}
   m_Layer: 5
   m_Name: Stats
   m_TagString: Untagged
@@ -10282,6 +10284,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1120388614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120388609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c983a4bb83d23a648be3a6e60af649b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: 850503041}
+  _defense: {fileID: 893610712}
+  _maxHealth: {fileID: 1569617522}
+  _critical: {fileID: 1409302387}
 --- !u!1 &1129152374
 GameObject:
   m_ObjectHideFlags: 0
