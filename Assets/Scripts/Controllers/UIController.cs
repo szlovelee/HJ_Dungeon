@@ -36,6 +36,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Text itemName;
     [SerializeField] private TMP_Text warningText;
     [SerializeField] private Transform ItemIconPos;
+    [SerializeField] private Transform EffectPos;
 
     private static readonly int statusShow = Animator.StringToHash("statusShow");
     private static readonly int buttonsShow = Animator.StringToHash("buttonsShow");
@@ -45,16 +46,24 @@ public class UIController : MonoBehaviour
 
     public event Action OnChangeConfirm;
     public Dictionary<string, GameObject> ItemTypeDict = new Dictionary<string, GameObject>();
+    public Dictionary<string, GameObject> ItemEffectDict = new Dictionary<string, GameObject>();
+
 
     private void Awake()
     {
         instance = this;
 
-        GameObject[] loadedObjects = Resources.LoadAll<GameObject>("ItemTypes");
+        GameObject[] loadedItemTypePrefab = Resources.LoadAll<GameObject>("ItemTypes");
+        GameObject[] loadedItemEffectPrefab = Resources.LoadAll<GameObject>("ItemEffects");
 
-        foreach (var obj in loadedObjects)
+        foreach (var obj in loadedItemTypePrefab)
         {
             ItemTypeDict[obj.name] = obj;
+        }
+
+        foreach (var obj in loadedItemEffectPrefab)
+        {
+            ItemEffectDict[obj.name] = obj;
         }
     }
 
@@ -107,9 +116,18 @@ public class UIController : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        GameObject obj = Instantiate(ItemTypeDict[$"Item_{selected.Type.ToString()}"], ItemIconPos);
-        Image iconImg = obj.transform.GetChild(2).GetComponent<Image>();
+        foreach (Transform child in EffectPos)
+        {
+            Destroy(child.gameObject);
+        }
+
+        GameObject icon = Instantiate(ItemTypeDict[$"Item_{selected.Type.ToString()}"], ItemIconPos);
+        Image iconImg = icon.transform.GetChild(2).GetComponent<Image>();
         iconImg.sprite = selected.itemIcon;
+
+        GameObject effect = Instantiate(ItemEffectDict[$"Effect_{selected.Type.ToString()}"], EffectPos);
+        Text effectTxt = effect.transform.GetChild(2).GetComponent<Text>();
+        effectTxt.text = (selected.attack + selected.defense + selected.maxHealth + selected.critical).ToString();
 
         itemName.text = selected.itemName;
 
