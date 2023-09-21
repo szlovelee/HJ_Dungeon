@@ -80,6 +80,7 @@ public class EquipController : MonoBehaviour
             selectedItem = this.gameObject;
             selectedItemInfo = itemInfo;
             UIController.instance.OpenChangeConfirm(selectedItemInfo);
+            SoundManager.instance.PlayEffect("option");
         }
         else
         {
@@ -88,16 +89,11 @@ public class EquipController : MonoBehaviour
         }
     }
 
-    private void AddEquipped()
-    {
-        Equipped[(int)itemInfo.Type] = itemInfo;
-        EquippedObjects[(int)itemInfo.Type] = this.gameObject;
-    }
-
     private void RemoveEquipped()
     {
         Equipped[(int)itemInfo.Type] = null;
         EquippedObjects[(int)itemInfo.Type] = null;
+        SoundManager.instance.PlayEffect("remove");
     }
 
     private void ChangeEquipped()
@@ -105,6 +101,7 @@ public class EquipController : MonoBehaviour
         Equipped[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = selectedItem.GetComponent<EquipController>().itemInfo;
         EquippedObjects[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = selectedItem.gameObject;
         UpdateEquippedUI();
+        SoundManager.instance.PlayEffect("equip");
     }
 
     private static void SetImageFormat(GameObject pos)
