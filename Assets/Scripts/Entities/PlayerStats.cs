@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class PlayerStats : ScriptableObject
 {
+    public string id;
+    public string desc;
+
     private int _level;
     public int level
     {

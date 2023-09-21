@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1b15c0f4296e84d8aced5c35ce50dd, type: 3}
   m_Name: PlayerStatsData
   m_EditorClassIdentifier: 
+  id: SZLOVELEE
+  desc: "\uCF54\uB529\uC744 \uC798\uD558\uACE0 \uC2F6\uC740 \uCABC\uB7A9 \uB274\uBE44\uC785\uB2C8\uB2E4.
+    \uACFC\uC81C \uB108\uBB34 \uC7AC\uBC0C\uB294\uB370 \uC2DC\uAC04\uC774 \uB108\uBB34
+    \uC5C6\uB2E4\uB294 \uC774\uC57C\uAE30\uB294 \uC548 \uD558\uB294 \uAC8C \uC88B\uACA0\uC8E0
+    \uC544\uBB34\uB798\uB3C4..."
   attack: 0
   defense: 0
   maxHealth: 0
   critical: 0
   exp: 0
-  coin: 999999
+  coin: 0
   attackSO: {fileID: 11400000, guid: 0617fa7b48b5e86419940b0e9233cbe4, type: 2}

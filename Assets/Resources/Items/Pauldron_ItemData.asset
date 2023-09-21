@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff4c659a46f45448b9f6e3c94356e7, type: 3}
   m_Name: Pauldron_ItemData
   m_EditorClassIdentifier: 
+  itemName: "\uC5B4\uAE68\uBF55"
   Type: 2
   attack: 0
   defense: 0

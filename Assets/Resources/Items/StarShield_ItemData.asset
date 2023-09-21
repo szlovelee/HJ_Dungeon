@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff4c659a46f45448b9f6e3c94356e7, type: 3}
   m_Name: StarShield_ItemData
   m_EditorClassIdentifier: 
+  itemName: "\uBCC4 \uBC29\uD328"
   Type: 1
   attack: 0
   defense: 8
