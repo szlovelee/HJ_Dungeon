@@ -70,6 +70,7 @@ public class EquipController : MonoBehaviour
             if (EquippedObjects[k] != null)
                 EquippedObjects[k].transform.GetChild(0).gameObject.SetActive(true);
         }
+        GameManager.instance.UpdatePlayerStats();
     }
 
     private void ItemSelection()

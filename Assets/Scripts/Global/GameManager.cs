@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public Items[] ItemList;
     public Inventory inventory;
 
+    public event Action OnStatusChange;
+
     private void Awake()
     {
         instance = this;
@@ -27,5 +29,11 @@ public class GameManager : MonoBehaviour
         {
             inventory.InventoryItems.Add(ItemList[i]);
         }
+    }
+
+    public void UpdatePlayerStats()
+    {
+        player.GetComponent<PlayerStatsHandler>().UpdateCharacterStats();
+        OnStatusChange?.Invoke();
     }
 }

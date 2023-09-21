@@ -6,8 +6,8 @@ using UnityEngine;
 public class AttackSO : ScriptableObject
 {
     [Header("Attack Info")]
-    public int attack;
-    public int defense;
-    public int maxHealth;
-    public int critical;
+    public int baseAttack;
+    public int baseDefense;
+    public int baseMaxHealth;
+    public int baseCritical;
 }

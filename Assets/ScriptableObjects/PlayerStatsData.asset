@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1b15c0f4296e84d8aced5c35ce50dd, type: 3}
   m_Name: PlayerStatsData
   m_EditorClassIdentifier: 
+  attack: 0
+  defense: 0
+  maxHealth: 0
+  critical: 0
   exp: 0
   coin: 999999
   attackSO: {fileID: 11400000, guid: 0617fa7b48b5e86419940b0e9233cbe4, type: 2}
