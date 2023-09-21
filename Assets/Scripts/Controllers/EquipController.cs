@@ -106,7 +106,7 @@ public class EquipController : MonoBehaviour
     private void ChangeEquipped()
     {
         Equipped[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = selectedItem.GetComponent<EquipController>().itemInfo;
-        EquippedObjects[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = this.gameObject;
+        EquippedObjects[(int)selectedItem.GetComponent<EquipController>().itemInfo.Type] = selectedItem.gameObject;
         UpdateEquippedUI();
     }
 
