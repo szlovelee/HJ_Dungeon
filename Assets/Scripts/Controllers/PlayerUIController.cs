@@ -48,7 +48,7 @@ public class PlayerUIController : MonoBehaviour
         _id.text = _player.GetComponent<PlayerStatsHandler>().CurrentStats.id.ToString();
         _level.text = _player.GetComponent<PlayerStatsHandler>().CurrentStats.level.ToString();
         _exp.text = string.Format($"{_player.GetComponent<PlayerStatsHandler>().CurrentStats.exp} / {_player.GetComponent<PlayerStatsHandler>().CurrentStats.maxExp}");
-        _expSlider.value = (_player.GetComponent<PlayerStatsHandler>().CurrentStats.exp) / (_player.GetComponent<PlayerStatsHandler>().CurrentStats.maxExp);
+        _expSlider.value = (float)_player.GetComponent<PlayerStatsHandler>().CurrentStats.exp / _player.GetComponent<PlayerStatsHandler>().CurrentStats.maxExp;
         _desc.text = _player.GetComponent<PlayerStatsHandler>().CurrentStats.desc.ToString();
     }
 
