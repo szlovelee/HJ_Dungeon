@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController instance;
+
     [Header("UI Animators")]
     [SerializeField] private Animator playerInfoAnimator;
     [SerializeField] private Animator statusAnimator;
@@ -21,6 +24,13 @@ public class UIController : MonoBehaviour
 
     [Header("InventoryCanvas")]
     [SerializeField] private Canvas inventoryCanvas;
+    public GameObject changeConfirm;
+    public GameObject WeaponPos;
+    public GameObject ShieldPos;
+    public GameObject ArmorPos;
+    public GameObject RingPos;
+
+    public Sprite emptyImg;
 
     private static readonly int statusShow = Animator.StringToHash("statusShow");
     private static readonly int buttonsShow = Animator.StringToHash("buttonsShow");
@@ -28,7 +38,13 @@ public class UIController : MonoBehaviour
     private static readonly int playerInfoShow = Animator.StringToHash("playerInfoShow");
     private static readonly int coinShow = Animator.StringToHash("coinShow");
 
+    public event Action OnChangeConfirm;
 
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -70,6 +86,23 @@ public class UIController : MonoBehaviour
         mainCanvas.gameObject.SetActive(true);
         coinAnimator.SetBool(coinShow, true);
         inventoryAnimator.SetBool(inventoryShow, false);
+    }
+
+    public void OpenChangeConfirm()
+    {
+        changeConfirm.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void CloseChangeConfirm()
+    {
+        changeConfirm.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void CallChangeConfirm()
+    {
+        OnChangeConfirm?.Invoke();
     }
 
     IEnumerator ToggleGameObjectWithDelay(GameObject obj, bool state, float delay = 1f)

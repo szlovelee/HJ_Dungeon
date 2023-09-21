@@ -37,7 +37,7 @@ public class PlayerStatsHandler : MonoBehaviour
         {
             foreach (Items item in gameManager.inventory.EquippedItems)
             {
-                UpdateAttackStats((o, o1) => o + o1, CurrentStats.attackSO, item.attackSO);
+                UpdateAttackStats((o, o1) => o + o1, CurrentStats.attackSO, item);
             }
         }
     }
@@ -47,24 +47,22 @@ public class PlayerStatsHandler : MonoBehaviour
         CurrentStats.level = (int)operation(CurrentStats.level, modifier.level);
         CurrentStats.exp = (int)operation(CurrentStats.exp, modifier.exp);
         CurrentStats.coin = (int)operation(CurrentStats.coin, modifier.coin);
-
-        UpdateAttackStats(operation, CurrentStats.attackSO, modifier.attackSO);
     }
 
-    private void UpdateAttackStats(Func<float, float, float> operation, AttackSO currentAttack, AttackSO newAttack)
+    private void UpdateAttackStats(Func<float, float, float> operation, AttackSO currentAttack, Items item)
     {
-        if (currentAttack == null || newAttack == null)
+        if (currentAttack == null || item == null)
         {
             return;
         }
 
-        if (currentAttack.GetType() != newAttack.GetType())
+        if (currentAttack.GetType() != item.GetType())
         {
             return;
         }
 
-        currentAttack.attack = (int)operation(currentAttack.attack, newAttack.attack);
-        currentAttack.defense = (int)operation(currentAttack.defense, newAttack.defense);
-        currentAttack.critical = (int)operation(currentAttack.critical, newAttack.critical);
+        currentAttack.attack = (int)operation(currentAttack.attack, item.attack);
+        currentAttack.defense = (int)operation(currentAttack.defense, item.defense);
+        currentAttack.critical = (int)operation(currentAttack.critical, item.critical);
     }
 }

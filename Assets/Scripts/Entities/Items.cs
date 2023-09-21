@@ -10,8 +10,15 @@ public enum ItemType
     Ring
 }
 
-public class Items : MonoBehaviour
+
+[CreateAssetMenu(fileName = "ItemData", menuName = "HJ_Dungeon/ItemData", order = 0)]
+public class Items : ScriptableObject
 {
+    public string itemName;
     public ItemType Type;
-    public AttackSO attackSO;
+    public int attack;
+    public int defense;
+    public int maxHealth;
+    public int critical;
+    public Sprite itemIcon;
 }

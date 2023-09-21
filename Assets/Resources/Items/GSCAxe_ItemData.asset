@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7712edeecec6222489600e8560698452, type: 3}
-  m_Name: StarShield_AttackData
+  m_Script: {fileID: 11500000, guid: 3eff4c659a46f45448b9f6e3c94356e7, type: 3}
+  m_Name: GSCAxe_ItemData
   m_EditorClassIdentifier: 
-  attack: 0
-  defense: 12
+  Type: 0
+  attack: 8
+  defense: 0
   maxHealth: 0
   critical: 0
+  itemIcon: {fileID: 21300000, guid: b6fa1492c27771344a7c68e222b4bde4, type: 3}
