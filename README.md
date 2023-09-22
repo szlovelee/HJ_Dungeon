@@ -18,4 +18,5 @@
 - 아이템 장착 팝업
 -----
 ### 📽미리보기
-![Uploading ezgif.com-video-to-gif (1).gif…]()
+![ezgif com-video-to-gif (1)](https://github.com/szlovelee/HJ_Dungeon/assets/77392694/7bb3490e-8347-476e-854b-40565ced5d04)
+
