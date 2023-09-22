@@ -69,6 +69,7 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
+        GameManager.instance.player.SetActive(true);
         inventoryCanvas.gameObject.SetActive(false);
         status.SetActive(false);
     }
@@ -79,6 +80,7 @@ public class UIController : MonoBehaviour
         status.SetActive(true);
         statusAnimator.SetBool(statusShow, true);
         buttonsAnimator.SetBool(buttonsShow, false);
+        SoundManager.instance.PlayEffect("positive");
 
     }
 
@@ -88,6 +90,7 @@ public class UIController : MonoBehaviour
         buttons.SetActive(true);
         statusAnimator.SetBool(statusShow, false);
         buttonsAnimator.SetBool(buttonsShow, true);
+        SoundManager.instance.PlayEffect("negative");
     }
 
     public void OpenInventory()
@@ -98,7 +101,7 @@ public class UIController : MonoBehaviour
         playerInfoAnimator.SetBool(playerInfoShow, false);
         inventoryAnimator.SetBool(inventoryShow, true);
         coinAnimator.SetBool(coinShow, false);
-
+        SoundManager.instance.PlayEffect("positive");
     }
 
     public void CloseInventory()
@@ -107,6 +110,7 @@ public class UIController : MonoBehaviour
         mainCanvas.gameObject.SetActive(true);
         coinAnimator.SetBool(coinShow, true);
         inventoryAnimator.SetBool(inventoryShow, false);
+        SoundManager.instance.PlayEffect("negative");
     }
 
     public void OpenChangeConfirm(Items selected)
@@ -144,14 +148,17 @@ public class UIController : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void CancelChangeConfirm()
+    {
+        changeConfirm.SetActive(false);
+        Time.timeScale = 1f;
+        SoundManager.instance.PlayEffect("negative");
+    }
+
     public void CloseChangeConfirm()
     {
         changeConfirm.SetActive(false);
         Time.timeScale = 1f;
-    }
-
-    public void CallChangeConfirm()
-    {
         OnChangeConfirm?.Invoke();
     }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
 
         inventory = new Inventory();
         ItemList = Resources.LoadAll<Items>("Items");
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        player.SetActive(false);
         //Test
         for (int i = 0; i < ItemList.Length; i++)
         {
@@ -35,5 +38,11 @@ public class GameManager : MonoBehaviour
     {
         player.GetComponent<PlayerStatsHandler>().UpdateCharacterStats();
         OnStatusChange?.Invoke();
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadSceneAsync("MainScene");
+        SoundManager.instance.PlayEffect("positive");
     }
 }
