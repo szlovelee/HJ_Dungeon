@@ -27,9 +27,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player.SetActive(false);
-        transitionPanel.SetActive(false);
-
         //Test
         for (int i = 0; i < ItemList.Length; i++)
         {
@@ -45,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        transitionPanel.SetActive(true);
+        IntroUIController.instance.TransitionStart();
         SoundManager.instance.PlayEffect("positive");
         StartCoroutine(SceneChange("MainScene", 0.3f));
     }

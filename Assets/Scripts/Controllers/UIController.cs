@@ -169,13 +169,13 @@ public class UIController : MonoBehaviour
         OnChangeConfirm?.Invoke();
     }
 
-    IEnumerator ToggleGameObjectWithDelay(GameObject obj, bool state, float delay = 1f)
+    protected IEnumerator ToggleGameObjectWithDelay(GameObject obj, bool state, float delay = 1f)
     {
         yield return new WaitForSeconds(delay);
         obj.SetActive(state);
     }
 
-    IEnumerator TimeScaleControlDelay(float timeScale, float delay = 1f)
+    protected IEnumerator TimeScaleControlDelay(float timeScale, float delay = 1f)
     {
         yield return new WaitForSeconds(delay);
         Time.timeScale = timeScale;
