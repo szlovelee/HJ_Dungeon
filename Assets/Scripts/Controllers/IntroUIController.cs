@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IntroUIController : UIController
 {
-    public static new IntroUIController instance;
+    public static IntroUIController instance;
 
     [Header("Intro Scene")]
     [SerializeField] private GameObject transitionPanel;

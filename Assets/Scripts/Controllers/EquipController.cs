@@ -29,19 +29,19 @@ public class EquipController : MonoBehaviour
         inventoryObjects = ItemUICreator.instance.inventoryObjects;
         Equipped = GameManager.instance.inventory.EquippedItems;
 
-        WeaponPos = UIController.instance.WeaponPos;
-        ShieldPos = UIController.instance.ShieldPos;
-        ArmorPos = UIController.instance.ArmorPos;
-        RingPos = UIController.instance.RingPos;
+        WeaponPos = MainUIController.instance.WeaponPos;
+        ShieldPos = MainUIController.instance.ShieldPos;
+        ArmorPos = MainUIController.instance.ArmorPos;
+        RingPos = MainUIController.instance.RingPos;
         
         Pos = new GameObject[] { WeaponPos, ShieldPos, ArmorPos, RingPos }; //ItemType enum ¼ø¼­
 
-        emptyImg = UIController.instance.emptyImg;
+        emptyImg = MainUIController.instance.emptyImg;
 
         inventoryButton = GetComponent<Button>();
         inventoryButton.onClick.AddListener(ItemSelection);
 
-        UIController.instance.OnChangeConfirm += ChangeEquipped;
+        MainUIController.instance.OnChangeConfirm += ChangeEquipped;
 
         UpdateEquippedUI();
     }
@@ -79,7 +79,7 @@ public class EquipController : MonoBehaviour
         {
             selectedItem = this.gameObject;
             selectedItemInfo = itemInfo;
-            UIController.instance.OpenChangeConfirm(selectedItemInfo);
+            MainUIController.instance.OpenChangeConfirm(selectedItemInfo);
             SoundManager.instance.PlayEffect("option");
         }
         else

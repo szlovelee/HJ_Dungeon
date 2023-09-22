@@ -1345,8 +1345,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015854743}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 941336552}
+        m_TargetAssemblyTypeName: MainUIController, Assembly-CSharp
         m_MethodName: CloseInventory
         m_Mode: 1
         m_Arguments:
@@ -7848,7 +7848,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &654160846
 MonoBehaviour:
@@ -8388,7 +8388,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &768094478
 GameObject:
@@ -9859,6 +9859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 941336551}
+  - component: {fileID: 941336552}
   m_Layer: 0
   m_Name: MainUIController
   m_TagString: Untagged
@@ -9879,50 +9880,18 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1015854741
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1015854742}
-  - component: {fileID: 1015854743}
-  m_Layer: 0
-  m_Name: UIController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1015854742
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015854741}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1015854743
+--- !u!114 &941336552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015854741}
+  m_GameObject: {fileID: 941336550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 503c1e565814d7449a0b14ed7573c55b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e35d6f1a028c0d4fad1019d3e8b3f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerInfoAnimator: {fileID: 1408167842}
@@ -10865,8 +10834,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015854743}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 941336552}
+        m_TargetAssemblyTypeName: MainUIController, Assembly-CSharp
         m_MethodName: OpenInventory
         m_Mode: 1
         m_Arguments:
@@ -11283,8 +11252,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015854743}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 941336552}
+        m_TargetAssemblyTypeName: MainUIController, Assembly-CSharp
         m_MethodName: OpenStatus
         m_Mode: 1
         m_Arguments:
@@ -11545,8 +11514,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015854743}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 941336552}
+        m_TargetAssemblyTypeName: MainUIController, Assembly-CSharp
         m_MethodName: CloseChangeConfirm
         m_Mode: 1
         m_Arguments:
@@ -12034,7 +12003,7 @@ Transform:
   - {fileID: 476912894}
   - {fileID: 521749457}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427598699
 GameObject:
@@ -12356,8 +12325,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015854743}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 941336552}
+        m_TargetAssemblyTypeName: MainUIController, Assembly-CSharp
         m_MethodName: CloseStatus
         m_Mode: 1
         m_Arguments:
@@ -12591,7 +12560,7 @@ RectTransform:
   - {fileID: 834546490}
   - {fileID: 654203259}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13160,7 +13129,7 @@ RectTransform:
   - {fileID: 853587949}
   - {fileID: 832493686}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13848,8 +13817,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1015854743}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+      - m_Target: {fileID: 941336552}
+        m_TargetAssemblyTypeName: MainUIController, Assembly-CSharp
         m_MethodName: CancelChangeConfirm
         m_Mode: 1
         m_Arguments:
@@ -14525,7 +14494,7 @@ GameObject:
   - component: {fileID: 1937146770}
   - component: {fileID: 1937146772}
   m_Layer: 5
-  m_Name: Attack
+  m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
