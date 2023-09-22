@@ -16,12 +16,14 @@ public class UIController : MonoBehaviour
     [SerializeField] private Animator buttonsAnimator;
     [SerializeField] private Animator inventoryAnimator;
     [SerializeField] private Animator coinAnimator;
+    [SerializeField] private Animator confirmAnimator;
 
     [Header("Main Canvas")]
     [SerializeField] private Canvas mainCanvas;
     [SerializeField] private GameObject playerInfo;
     [SerializeField] private GameObject buttons;
     [SerializeField] private GameObject status;
+    [SerializeField] private GameObject startPanel;
 
     [Header("Inventory Canvas")]
     [SerializeField] private Canvas inventoryCanvas;
@@ -43,6 +45,7 @@ public class UIController : MonoBehaviour
     private static readonly int inventoryShow = Animator.StringToHash("inventoryShow");
     private static readonly int playerInfoShow = Animator.StringToHash("playerInfoShow");
     private static readonly int coinShow = Animator.StringToHash("coinShow");
+    private static readonly int confirmShow = Animator.StringToHash("confirmShow");
 
     public event Action OnChangeConfirm;
     public Dictionary<string, GameObject> ItemTypeDict = new Dictionary<string, GameObject>();
@@ -71,7 +74,9 @@ public class UIController : MonoBehaviour
     {
         GameManager.instance.player.SetActive(true);
         inventoryCanvas.gameObject.SetActive(false);
+        changeConfirm.SetActive(false);
         status.SetActive(false);
+        StartCoroutine(ToggleGameObjectWithDelay(startPanel, false, 0.5f));
     }
 
     public void OpenStatus()
@@ -145,20 +150,22 @@ public class UIController : MonoBehaviour
         }
 
         changeConfirm.SetActive(true);
-        Time.timeScale = 0f;
+        StartCoroutine(TimeScaleControlDelay(0f, 0.3f));
     }
 
     public void CancelChangeConfirm()
     {
-        changeConfirm.SetActive(false);
         Time.timeScale = 1f;
+        confirmAnimator.SetBool(confirmShow, false);
+        StartCoroutine(ToggleGameObjectWithDelay(changeConfirm.gameObject, false, 0.3f));
         SoundManager.instance.PlayEffect("negative");
     }
 
     public void CloseChangeConfirm()
     {
-        changeConfirm.SetActive(false);
         Time.timeScale = 1f;
+        confirmAnimator.SetBool(confirmShow, false);
+        StartCoroutine(ToggleGameObjectWithDelay(changeConfirm.gameObject, false, 0.3f));
         OnChangeConfirm?.Invoke();
     }
 
@@ -166,5 +173,11 @@ public class UIController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         obj.SetActive(state);
+    }
+
+    IEnumerator TimeScaleControlDelay(float timeScale, float delay = 1f)
+    {
+        yield return new WaitForSeconds(delay);
+        Time.timeScale = timeScale;
     }
 }

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject player;
+    [SerializeField] GameObject transitionPanel;
 
     public Items[] ItemList;
     public Inventory inventory;
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player.SetActive(false);
+        transitionPanel.SetActive(false);
+
         //Test
         for (int i = 0; i < ItemList.Length; i++)
         {
@@ -42,7 +45,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("MainScene");
+        transitionPanel.SetActive(true);
         SoundManager.instance.PlayEffect("positive");
+        StartCoroutine(SceneChange("MainScene", 0.3f));
+    }
+
+    IEnumerator SceneChange(string sceneName, float delay) 
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadSceneAsync(sceneName);
     }
 }
