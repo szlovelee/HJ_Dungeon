@@ -18,3 +18,4 @@
 - 아이템 장착 팝업
 -----
 ### 📽미리보기
+![Uploading ezgif.com-video-to-gif (1).gif…]()
