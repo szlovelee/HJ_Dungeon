@@ -7,7 +7,7 @@
 
 -----
 ### 🔗 외부 링크
-- [프로젝트 기록] [(https://www.notion.so/szloveleesz/HJ_Dungeon-Intro-36f1e819c0574f58ab2f3ec72544a8a6)](https://szloveleesz.notion.site/HJ_Dungeon-Intro-36f1e819c0574f58ab2f3ec72544a8a6?pvs=4)
+- [프로젝트 기록] (https://szloveleesz.notion.site/HJ_Dungeon-Intro-36f1e819c0574f58ab2f3ec72544a8a6?pvs=4)
 - [시연 영상] (https://www.notion.so/szloveleesz/HJ_Dungeon-Intro-36f1e819c0574f58ab2f3ec72544a8a6)
 -----
 ### 📜 과제 개요
